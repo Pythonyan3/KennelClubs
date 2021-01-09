@@ -37,7 +37,7 @@
 
 				<p class="description__text">Узнать больше о клубах, питомцах и выставках можно скачав Excel файл, с наиболее интересной и актуальной информацией, нажав кнопку ниже.</p>
 				
-					<a href="{{ url_for('report') }}" class="btn">Скачать</a>
+					<a href="{{ url_for('main.report') }}" class="btn">Скачать</a>
 			</div>
 		</div>
 
@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="section__info">
-						<h2 class="section__title">3 наиболее популярные породы</h2>
+						<h2 class="block__title">3 наиболее популярные породы</h2>
 
 						<p class="section__text">Питомцы участвующие в выставках, являются представителями различных пород, со всех уголков мира.</p>
 
@@ -112,61 +112,15 @@
 				</h2>
 
 				<div class="section__content">
-					<div class="reward">
-						<img class="reward__icon" src="../static/assets/svg_icons/cat-food.svg"> 
+					{% for reward in rewards %}
+						<div class="reward">
+							<img class="reward__icon" src="{{ url_for('static', filename=reward[1]) }}"> 
 
-						<div class="reward__title">
-							Корм
+							<div class="reward__title">
+								{{ reward[0] }}
+							</div>
 						</div>
-					</div>
-
-					<div class="reward">
-						<img class="reward__icon" src="../static/assets/svg_icons/ball.svg"> 
-
-						<div class="reward__title">
-							Корм
-						</div>
-					</div>
-
-					<div class="reward">
-						<img class="reward__icon" src="../static/assets/svg_icons/bowl.svg">
-
-						<div class="reward__title">
-							Посуда
-						</div>
-					</div>
-
-					<div class="reward">
-						<img class="reward__icon" src="../static/assets/svg_icons/shampoo.svg">
-
-						<div class="reward__title">
-							Средства гигиены
-						</div>
-					</div>
-
-					<div class="reward">
-						<img class="reward__icon" src="../static/assets/svg_icons/pills.svg">
-
-						<div class="reward__title">
-							Витамины
-						</div>
-					</div>
-
-					<div class="reward">
-						<img class="reward__icon" src="../static/assets/svg_icons/leash.svg">
-
-						<div class="reward__title">
-							Ошейники/Поводки
-						</div>
-					</div>
-
-					<div class="reward">
-						<img class="reward__icon" src="../static/assets/svg_icons/cat.svg">
-
-						<div class="reward__title">
-							Доп. Инвентарь
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
@@ -219,11 +173,12 @@
 					<h2 class="block__title">
 						Клубы Донецка
 					</h2>
-
-					<div class="footer__content__item">
-						<img class="footer__icon" src="{{ url_for('static', filename='assets/svg_icons/pin.svg') }}">
-						<div class="footer__text">Адрес</div>
-					</div>
+					{% for club in clubs %}
+						<div class="footer__content__item">
+							<img class="footer__icon" src="{{ url_for('static', filename='assets/svg_icons/pin.svg') }}">
+							<div class="footer__text">{{ club[0] }} - {{ club[1] }}</div>
+						</div>
+					{% endfor %}					
 				</div>
 
 				<picture class="footer__image">

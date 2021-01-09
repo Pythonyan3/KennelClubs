@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="{{ url_for('static', filename='assets/images/favicon.svg') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/style.css') }}">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<title>Кинологические клубы</title>
+</head>
+<body>
+	<!--Header block-->
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<div class="header__logo">
+					<h2 class="logo__title">Кинологические клубы</h1>
+
+					<div class="logo__text">Выставки собак в Донецке</div>
+				</div>
+
+				<div class="nav__bar">
+					<a class="nav__link" href="">Питомцы</a>
+					<a class="nav__link" href="">Клубы</a>
+					<a class="nav__link" href="">Выставки</a>
+					<a class="nav__link" href="">Дополнительно</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!--Start (first) block-->
+
+	<div class="start__block">
+		<div class="container">
+			<div class="start__block__inner">
+				<h1 class="description__title">Питомцы тоже должны побеждать</h1>
+
+				<p class="description__text">Узнать больше о клубах, питомцах и выставках можно скачав Excel файл, с наиболее интересной и актуальной информацией, нажав кнопку ниже.</p>
+				
+					<a href="{{ url_for('report') }}" class="btn">Скачать</a>
+			</div>
+		</div>
+
+		<picture>
+			<source srcset="../static/assets/images/dog.webp" type="image/webp">
+
+			<img class="start__background" src="../static/assets/images/dog.png">
+		</picture>
+	</div>
+
+	<!--Top breeds section-->
+
+	<section class="section white">
+		<div class="container">
+			<div class="section__inner">
+				<div class="section__content">
+					<div class="section__chart">
+						<canvas id="breeds__chart"></canvas>
+					</div>
+
+					<div class="section__info">
+						<h2 class="section__title">3 наиболее популярные породы</h2>
+
+						<p class="section__text">Питомцы участвующие в выставках, являются представителями различных пород, со всех уголков мира.</p>
+
+						<p class="section__text">3 наиболее популярные породы среди питомцев участвующих в выставках представлены на диаграмме.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--Top pets section-->
+
+	<section class="section gray">
+		<div class="container">
+			<div class="section__inner">
+				<h2 class="block__title">
+					Самые активные питомцы Донецка
+				</h2>
+
+				<div class="section__content">
+					<div class="pet__card">
+						<picture srcset="../static/assets/images/card_photo.webp" type="image/webp">
+							<img src="../static/assets/images/card_photo.png" class="pet__photo">
+						</picture>
+
+						<div class="pet__name">
+							Jennifer
+						</div>
+
+						<div class="learn__more btn">
+							Подробнее
+						</div>
+					</div>		
+				</div>
+
+				<div class="rest__pets btn">
+					Другие питомцы
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--Rewards section-->
+
+	<section class="section white">
+		<div class="container">
+			<div class="section__inner">
+				<h2 class="block__title">
+					Возможные награды за участие в выставках
+				</h2>
+
+				<div class="section__content">
+					<div class="reward">
+						<img class="reward__icon" src="../static/assets/svg_icons/cat-food.svg"> 
+
+						<div class="reward__title">
+							Корм
+						</div>
+					</div>
+
+					<div class="reward">
+						<img class="reward__icon" src="../static/assets/svg_icons/ball.svg"> 
+
+						<div class="reward__title">
+							Корм
+						</div>
+					</div>
+
+					<div class="reward">
+						<img class="reward__icon" src="../static/assets/svg_icons/bowl.svg">
+
+						<div class="reward__title">
+							Посуда
+						</div>
+					</div>
+
+					<div class="reward">
+						<img class="reward__icon" src="../static/assets/svg_icons/shampoo.svg">
+
+						<div class="reward__title">
+							Средства гигиены
+						</div>
+					</div>
+
+					<div class="reward">
+						<img class="reward__icon" src="../static/assets/svg_icons/pills.svg">
+
+						<div class="reward__title">
+							Витамины
+						</div>
+					</div>
+
+					<div class="reward">
+						<img class="reward__icon" src="../static/assets/svg_icons/leash.svg">
+
+						<div class="reward__title">
+							Ошейники/Поводки
+						</div>
+					</div>
+
+					<div class="reward">
+						<img class="reward__icon" src="../static/assets/svg_icons/cat.svg">
+
+						<div class="reward__title">
+							Доп. Инвентарь
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--clubs members chart-->
+
+	<section class="section gray">
+		<div class="container">
+			<div class="section__inner">
+				<div class="section__content">
+					<div class="section__chart">
+						<canvas id="members__chart"></canvas>
+					</div>
+
+					<div class="section__info">
+						<h2 class="block__title">Популярные клубы Донецка</h2>
+
+						<p class="section__text">Питомцы участвующие в выставках, являются представителями различных пород, со всех уголков мира.</p>
+
+						<p class="section__text">3 наиболее популярные породы среди питомцев участвующих в выставках представлены на диаграмме.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--Footer-->
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<div class="footer__content">
+					<h2 class="block__title">
+						Вопросы и предложения
+					</h2>
+
+					<div class="footer__content__item">
+						<img class="footer__icon" src="{{ url_for('static', filename='assets/svg_icons/envelope.svg') }}">
+						<div class="footer__text">email@mail.ru</div>
+					</div>
+
+					<div class="footer__content__item">
+						<img class="footer__icon" src="{{ url_for('static', filename='assets/svg_icons/telephone.svg') }}">
+						<div class="footer__text">+38 099 711 5597</div>
+					</div>
+				</div>
+
+				<div class="footer__content">
+					<h2 class="block__title">
+						Клубы Донецка
+					</h2>
+
+					<div class="footer__content__item">
+						<img class="footer__icon" src="{{ url_for('static', filename='assets/svg_icons/pin.svg') }}">
+						<div class="footer__text">Адрес</div>
+					</div>
+				</div>
+
+				<picture class="footer__image">
+					<source srcset="../static/assets/images/footer_dog.webp" type="image/webp">
+
+					<img class="footer__image" src="../static/assets/images/footer_dog.png">
+				</picture>
+			</div>
+		</div>
+	</footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+
+<script src="../static/assets/scripts/script.js"></script>
+</html>

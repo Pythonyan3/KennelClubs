@@ -1,0 +1,304 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15pt;
+}
+
+a{
+	text-decoration: none;
+	color:#000;
+}
+
+/*header*/
+
+.header{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	margin-top: 40px;
+	z-index: 3;
+}
+
+.container{
+	position: relative;
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+.header__inner{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+/*logo*/
+
+.logo__title{
+	color: #f1cdb3;
+	font-size: 2em;
+}
+
+.logo__text{
+	font-family: Arial;
+	color: #fff;
+	font-size: 1em;
+	margin-top: 15px;
+	margin-left: 5px;
+}
+
+/*navigation bar*/
+
+.nav__bar{
+	text-transform: lowercase;
+	display: inline-block;
+}
+
+.nav__link{
+	position: relative;
+	color: #cdcdcd;
+	text-decoration: none;
+	margin-right: 35px;
+}
+
+.nav__link::before{
+	content: "";
+	position: absolute;
+	background-color: #f1cdb3;
+	width: 0px;
+	height: 2px;
+	bottom: -15px;
+	margin-top: 15px;
+	transition: 0.35s;
+}
+
+.nav__link:hover{
+	cursor: pointer;
+	color: #fff;
+}
+
+.nav__link:hover:before{
+	width: 100%;
+}
+
+.nav__link:last-child{
+	margin-right: 0;
+}
+
+/*start block*/
+
+.start__block{
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	background: linear-gradient(135deg, #473a32, #000);
+}
+
+.start__block__inner{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	align-content: flex-start;
+	width: 450px;
+	margin-top: 100px;
+}
+
+.description__title{
+	font-size: 3em;
+	color: #fff;
+	line-height: 1;
+	margin-bottom: 45px;
+}
+
+.description__text{
+	font-size: 1em;
+	color: white;
+	margin-bottom: 45px;
+}
+
+.btn{
+	font-size: 1.13333em;
+	border-radius: 50px;
+	padding: 20px 45px;
+	background-color: #f1cdb3;
+	transition: 0.35s;
+	text-align: center;
+}
+
+.btn:hover{
+	background-color: #fddcc4;
+	cursor: pointer;
+}
+
+.start__background{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 180vh;
+}
+
+/*sections*/
+
+.section{
+	width: 100%;
+	padding: 80px 0 0 0;
+	color: #545454;
+}
+
+.section__inner{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section__content{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+/*first white section (breeds top)*/
+
+.white{
+	background-color: #fff;
+}
+
+.section__chart{
+	width: 50%;
+	margin: 0 45px 50px;
+}
+
+.section__info{
+	width: 40%;
+	margin-bottom: 25px;
+}
+
+.block__title{
+	font-size: 2em;
+	margin-bottom: 50px;
+}
+
+.section__text{
+	margin-bottom: 25px;
+	font-size: 1em;
+}
+
+/*first gray section (top 3 pets)*/
+
+.gray{
+	background-color: #f6f6f6;
+}
+
+.pet__card{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 30%;
+	padding-bottom: 25px;
+	background-color: #fafafa;
+}
+
+.pet__name{
+	font-size: 1.33em;
+	margin: 25px 0;
+}
+
+.learn__more{
+	border: 2px solid #f1cdb3;
+	background-color: #fafafa;
+}
+
+.learn__more:hover{
+	background-color: #f1cdb3;
+}
+
+.rest__pets{
+	margin: 65px 0;
+}
+
+/* posible rewards */
+
+.reward{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	width: 20%;
+	margin-bottom: 50px;
+}
+
+.reward__icon{
+	width: 55px;
+	height: 55px;
+}
+
+.reward__title{
+	margin-top: 30px;
+	text-align: center;
+}
+
+/*clubs members chart*/
+
+
+/*footer*/
+
+.footer{
+	width: 100%;
+	padding: 50px 0 0 0;
+	color: #f1cdb3;
+	background: linear-gradient(135deg, #473a32, #000);
+}
+
+.footer__inner{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.footer__content{
+	max-width: 300px;
+	min-height: 300px;
+	margin: 0 150px 0 0;
+	padding: 0 20px;
+	color: #fff;
+}
+
+.footer__content__item{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 25px;
+	color: #f1cdb3;
+}
+
+.footer__icon{
+	width: 45px;
+	margin: 0 20px 0 5px;
+}
+
+.footer__text{
+	font-size: 1.3em;
+}
+
+.footer__image{
+	width: 300px;
+	height: auto;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
